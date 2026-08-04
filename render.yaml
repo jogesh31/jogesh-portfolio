@@ -3,6 +3,7 @@ services:
   - type: web
     name: jogesh-portfolio
     runtime: static
+    rootDir: jogesh-portfolio
     buildCommand: npm ci && npm run build
     staticPublishPath: ./out
     autoDeploy: true
