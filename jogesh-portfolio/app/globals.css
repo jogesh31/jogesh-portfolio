@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/*
+  ============================================================
+  GLACIA — a calm winter design system
+  Light is the committed identity (misty snow + frosted glass);
+  .dark is an "arctic night" variant. Tokens are RGB triples so
+  they compose with Tailwind's /alpha syntax.
+  ============================================================
+*/
+:root {
+  /* Snow surfaces */
+  --snow: 236 242 250;        /* page base  #ECF2FA */
+  --snow-2: 247 250 254;      /* lifted     #F7FAFE */
+  --frost: 255 255 255;       /* glass, used with low alpha */
+  --border: 30 64 132;        /* glacier-blue tinted hairline */
+
+  /* Ink */
+  --ink: 20 33 58;            /* #14213A deep slate-blue */
+  --ink-muted: 82 96 122;     /* #52607A */
+  --ink-faint: 130 143 166;   /* #828FA6 */
+
+  /* Brand */
+  --glacier: 30 74 165;       /* #1E4AA5 headline blue      */
+  --azure: 37 99 235;         /* #2563EB CTA / interactive  */
+  --gold: 210 150 82;         /* #D29652 warm birch accent  */
+
+  --radius: 22px;
+  --nav-h: 76px;
+
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jbmono), ui-monospace, "Fira Code", monospace;
+
+  color-scheme: light;
+}
+
+.dark {
+  /* Arctic night */
+  --snow: 9 15 28;            /* #090F1C midnight */
+  --snow-2: 15 22 38;         /* #0F1626 */
+  --frost: 255 255 255;
+  --border: 150 180 240;
+
+  --ink: 227 235 249;         /* #E3EBF9 */
+  --ink-muted: 155 170 198;   /* #9BAAC6 */
+  --ink-faint: 108 122 150;
+
+  --glacier: 128 170 255;     /* brighter on dark */
+  --azure: 96 148 255;
+  --gold: 230 185 120;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-snow: rgb(var(--snow));
+  --color-snow-2: rgb(var(--snow-2));
+  --color-frost: rgb(var(--frost));
+  --color-ink: rgb(var(--ink));
+  --color-ink-muted: rgb(var(--ink-muted));
+  --color-ink-faint: rgb(var(--ink-faint));
+  --color-glacier: rgb(var(--glacier));
+  --color-azure: rgb(var(--azure));
+  --color-gold: rgb(var(--gold));
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: rgb(var(--border) / 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 24px);
+}
+
+body {
+  background-color: rgb(var(--snow));
+  color: rgb(var(--ink));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Ambient winter wash behind everything (fixed, cheap, GPU-friendly) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60% 50% at 15% 8%, rgb(var(--azure) / 0.10), transparent 70%),
+    radial-gradient(55% 45% at 88% 4%, rgb(var(--gold) / 0.10), transparent 70%),
+    radial-gradient(70% 60% at 50% 100%, rgb(var(--glacier) / 0.08), transparent 70%),
+    linear-gradient(180deg, rgb(var(--snow-2)), rgb(var(--snow)));
+  pointer-events: none;
+}
+
+::selection {
+  background: rgb(var(--azure) / 0.22);
+}
+
+/* ---------------- Frosted glass ---------------- */
+.frost {
+  background: rgb(var(--frost) / 0.55);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  backdrop-filter: blur(14px) saturate(135%);
+  border: 1px solid rgb(var(--frost) / 0.7);
+  box-shadow:
+    0 1px 0 rgb(var(--frost) / 0.6) inset,
+    0 18px 40px -24px rgb(var(--glacier) / 0.45);
+}
+.dark .frost {
+  background: rgb(var(--frost) / 0.05);
+  border: 1px solid rgb(var(--frost) / 0.10);
+  box-shadow:
+    0 1px 0 rgb(var(--frost) / 0.06) inset,
+    0 24px 50px -30px rgb(0 0 0 / 0.8);
+}
+
+.frost-strong {
+  background: rgb(var(--frost) / 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgb(var(--frost) / 0.8);
+}
+.dark .frost-strong {
+  background: rgb(var(--frost) / 0.08);
+  border: 1px solid rgb(var(--frost) / 0.12);
+}
+
+/* Card hover lift */
+.lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px -28px rgb(var(--glacier) / 0.5);
+}
+
+/* Gradient headline ink */
+.ink-gradient {
+  background: linear-gradient(180deg, rgb(var(--glacier)), rgb(var(--azure)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Eyebrow / label */
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(var(--ink-faint));
+}
+
+/* Snow canvas sits behind hero content */
+.snow-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--azure));
+  outline-offset: 2px;
+  border-radius: 6px;
+}
