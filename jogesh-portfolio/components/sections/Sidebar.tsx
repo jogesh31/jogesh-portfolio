@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Sidebar() {
   return (
-    <aside className="lg:sticky lg:top-24 lg:self-start">
+    <aside className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto">
       <Reveal>
         <div className="frost rounded-3xl p-6">
           {/* Photo — passport-style, GitHub-avatar framing */}
@@ -16,7 +16,7 @@ export function Sidebar() {
           />
 
           <h1 className="mt-5 font-display text-xl font-bold text-ink">{PROFILE.name}</h1>
-          <p className="mt-1 text-sm text-ink-muted">{PROFILE.roles.join(" · ")}</p>
+          <p className="mt-1.5 text-[13px] leading-relaxed text-ink-muted">{PROFILE.headline}</p>
           <p className="mt-3 font-mono text-xs text-ink-faint">
             {PROFILE.location} · {PROFILE.availability}
           </p>

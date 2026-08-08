@@ -26,6 +26,8 @@ export const PROFILE = {
   ],
   tagline:
     "PL-300 certified Data Analyst with 5+ years turning 20M+ record datasets into executive dashboards, automated reporting, and the developer tools that make BI teams faster.",
+  headline:
+    "Microsoft PL-300 Certified Power BI Data Analyst | SQL | Advanced Excel | Snowflake | Python | ETL | Power Automate | Claude AI",
   location: "Chandigarh, India",
   availability: "Open to Data Analyst / Power BI roles",
   email: "jogeshkumar3112@gmail.com",
@@ -67,16 +69,12 @@ export const TOOLS: Tool[] = [
     name: "DAX Slayer",
     tagline: "A Power BI external tool that finds dead DAX — and deletes it safely.",
     description:
-      "A developer tool for other DAX developers. It scans a semantic model's full dependency graph to find unused measures and calculated columns, shows the exact blast radius before you delete anything, and cleans up through the Tabular Object Model (TOM) with an automatic .bim snapshot before every write — so every change is reversible. It also bundles an offline DAX assistant (explain, format, deploy patterns) that runs 100% locally: no AI API, no external calls, only localhost XMLA to Power BI Desktop. Your model's names, structure and logic never leave your machine.",
+      "Scans a Power BI model's dependency graph to find unused DAX, shows the blast radius before deleting, and cleans up safely with an automatic backup before every write. Runs 100% locally — no AI API, no external calls.",
     features: [
-      "Full dependency graph via a real character-level DAX tokenizer — respects string literals, quoted identifiers and comments (not regex)",
-      "Cross-references the model against the report's visual JSON: truly unused vs. used-only-by-measures vs. placed on a visual",
-      "Shows the transitive blast radius of a deletion before you commit",
-      "Bulk select + delete with an automatic full .bim backup before every write",
-      "Bulk 'Organize into Folders' to tidy the field list",
-      "Rule-based plain-English measure explainer, grounded on the real schema",
-      "DAX beautifier that reindents one-liners and writes the formatted version back",
-      "'Most Used DAX' library with live autocomplete from the connected model's real names",
+      "Full dependency graph via a real DAX tokenizer, not regex",
+      "Shows the blast radius of a deletion before you commit",
+      "Automatic .bim backup before every write — fully reversible",
+      "Offline DAX assistant: explain, format, autocomplete",
     ],
     stack: ["Python", "TOM / XMLA", "Power BI External Tool", "Local server"],
     icon: ScanSearch,
@@ -89,12 +87,11 @@ export const TOOLS: Tool[] = [
     name: "Dashboard Wireframe Builder",
     tagline: "Design a Power BI report layout before a single measure is written.",
     description:
-      "A browser-based wireframing tool with a Power BI-style catalog of 65+ chart, filter and container types. Managers structure dashboard pages; analysts use the wireframe — with comments and a data schema attached — as the build spec. Dependency-free, stores projects in IndexedDB, and exports portable .wfd.json plus PDF/JPG. Adopted by Product Delivery Managers and cut design-to-delivery cycle time by ~38%.",
+      "A browser-based wireframing tool with a Power BI-style catalog of 65+ visual types. Managers structure dashboard pages; analysts build from the wireframe as the spec. Adopted by Product Delivery Managers, cutting design-to-delivery time by ~38%.",
     features: [
       "65+ Power BI-style visual, filter and container types",
-      "Wireframe-as-spec: attach comments and the data schema for analysts",
-      "Auto-saves to IndexedDB; export .wfd.json / PDF / JPG",
-      "Zero dependencies — two tiny vendored libs for CSV/Excel + export",
+      "Wireframe-as-spec, with comments and data schema attached",
+      "Auto-saves; exports .wfd.json / PDF / JPG",
     ],
     stack: ["JavaScript (ES modules)", "IndexedDB", "Canvas / export"],
     icon: LayoutTemplate,
@@ -109,11 +106,10 @@ export const TOOLS: Tool[] = [
     name: "PL-300 Quiz",
     tagline: "An adaptive prep platform for the Power BI Data Analyst exam.",
     description:
-      "A PL-300 preparation tool with adaptive quizzes, per-answer explanations, and progress tracking — built to make certification practice feel like a guided study loop rather than a static question bank.",
+      "An adaptive PL-300 prep platform — quizzes re-weight toward weak areas, every answer comes with an explanation, and progress carries across sessions.",
     features: [
       "Adaptive quizzing that re-weights toward weak areas",
       "Explanations on every answer, not just right/wrong",
-      "Progress tracking across sessions",
     ],
     stack: ["Web app", "Adaptive logic"],
     icon: GraduationCap,
