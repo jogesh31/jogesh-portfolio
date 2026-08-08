@@ -25,19 +25,13 @@ export const PROFILE = {
     "PL-300 Certified (2×)",
   ],
   tagline:
-    "PL-300 certified Data Analyst with 4+ years turning 20M+ record datasets into executive dashboards, automated reporting, and the developer tools that make BI teams faster.",
+    "PL-300 certified Data Analyst with 5+ years turning 20M+ record datasets into executive dashboards, automated reporting, and the developer tools that make BI teams faster.",
   location: "Chandigarh, India",
   availability: "Open to Data Analyst / Power BI roles",
   email: "jogeshkumar3112@gmail.com",
   phone: "+91 79867 97829",
   resumeUrl: "/resume.pdf",
 } as const;
-
-export const SOCIALS: { label: string; href: string; icon: LucideIcon }[] = [
-  { label: "GitHub", href: "https://github.com/jogesh31", icon: Github },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/jogeshkumarsharma/", icon: Linkedin },
-  { label: "Email", href: "mailto:jogeshkumar3112@gmail.com", icon: Mail },
-];
 
 export const NAV_LINKS: { id: string; label: string }[] = [
   { id: "experience", label: "Experience" },
@@ -48,10 +42,9 @@ export const NAV_LINKS: { id: string; label: string }[] = [
 /* --------------------------------- Metrics --------------------------------- */
 export type Metric = { value: string; label: string };
 export const METRICS: Metric[] = [
-  { value: "4+", label: "Years in analytics" },
+  { value: "5+", label: "Years in analytics" },
   { value: "20M+", label: "Records per dataset" },
   { value: "2×", label: "PL-300 certified" },
-  { value: "40+", label: "BI dashboards shipped" },
 ];
 
 /* ---------------------------------- Tools ---------------------------------- */
@@ -106,7 +99,10 @@ export const TOOLS: Tool[] = [
     stack: ["JavaScript (ES modules)", "IndexedDB", "Canvas / export"],
     icon: LayoutTemplate,
     accent: "glacier",
-    links: { github: "https://github.com/jogesh31/Dashboard-Wireframe" },
+    links: {
+      demo: "https://dashboard-wireframe.onrender.com/",
+      github: "https://github.com/jogesh31/Dashboard-Wireframe",
+    },
   },
   {
     id: "pl300-quiz",
@@ -122,7 +118,7 @@ export const TOOLS: Tool[] = [
     stack: ["Web app", "Adaptive logic"],
     icon: GraduationCap,
     accent: "gold",
-    links: {},
+    links: { demo: "https://powerbi-quiz.onrender.com/" },
   },
 ];
 
@@ -171,6 +167,11 @@ export const WORK: Work[] = [
     tags: ["Power BI", "HR analytics"],
     repo: "https://github.com/jogesh31/Workforce-and-Attrition-Analysis",
     icon: Boxes,
+    images: [
+      "/dashboards/workforce/page-1.png",
+      "/dashboards/workforce/page-2.png",
+      "/dashboards/workforce/page-3.png",
+    ],
   },
 ];
 
@@ -294,7 +295,7 @@ export const CREDENTIALS: Credential[] = [
 ];
 
 export const SUMMARY =
-  "PL-300 certified Data Analyst based in Chandigarh with 4+ years owning BI end to end — from requirements with senior leadership (IAS officers, State Project Directors, CEOs) to deployed dashboards and automated reporting. Background in bioinformatics, which built the discipline to stay rigorous with messy, high-volume data — today that means turning 20M+ record datasets into executive dashboards, and building the developer tools (DAX Slayer, Dashboard Wireframe Builder) that make BI teams faster.";
+  "PL-300 certified Data Analyst based in Chandigarh with 5+ years owning BI end to end — from requirements with senior leadership (IAS officers, State Project Directors, CEOs) to deployed dashboards and automated reporting. Background in bioinformatics, which built the discipline to stay rigorous with messy, high-volume data — today that means turning 20M+ record datasets into executive dashboards, and building the developer tools (DAX Slayer, Dashboard Wireframe Builder) that make BI teams faster.";
 
 export const CONTACT_METHODS: { label: string; value: string; href: string; icon: LucideIcon }[] = [
   { label: "Email", value: "jogeshkumar3112@gmail.com", href: "mailto:jogeshkumar3112@gmail.com", icon: Mail },

@@ -49,7 +49,7 @@ export function Sidebar() {
           </div>
 
           {/* Mini stats */}
-          <div className="mt-6 grid grid-cols-2 gap-3 border-t border-[rgb(var(--border)/0.12)] pt-5">
+          <div className="mt-6 grid grid-cols-3 gap-3 border-t border-[rgb(var(--border)/0.12)] pt-5">
             {METRICS.map((m) => (
               <div key={m.label}>
                 <div className="font-display text-lg font-bold text-glacier">{m.value}</div>

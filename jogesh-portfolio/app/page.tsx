@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { Sidebar } from "@/components/sections/Sidebar";
 import { Profile } from "@/components/sections/Profile";
 import { Experience } from "@/components/sections/Experience";
@@ -19,7 +18,6 @@ export default function Home() {
           <Dashboards />
         </div>
       </main>
-      <Footer />
     </>
   );
 }
