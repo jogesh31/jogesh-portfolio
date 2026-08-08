@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Sidebar() {
   return (
-    <aside className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto">
+    <aside>
       <Reveal>
         <div className="frost rounded-3xl p-6">
           {/* Photo — passport-style, GitHub-avatar framing */}
