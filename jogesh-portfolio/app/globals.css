@@ -160,15 +160,6 @@ body::before {
   color: rgb(var(--ink-faint));
 }
 
-/* Snow canvas sits behind hero content */
-.snow-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
 @keyframes rise {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }

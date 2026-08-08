@@ -4,14 +4,10 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-4xl scroll-mt-24 px-6 py-24">
-      <SectionHeading
-        eyebrow="Career"
-        title="Four years, five teams"
-        description="From pharmacovigilance and legal analytics to government BI — a steady move deeper into Power BI and data engineering."
-      />
+    <section id="experience" className="scroll-mt-24">
+      <SectionHeading eyebrow="Career" title="Experience" />
 
-      <div className="relative mt-12">
+      <div className="relative mt-8">
         {/* vertical rail */}
         <div className="absolute left-[7px] top-2 bottom-2 w-px bg-[rgb(var(--border)/0.2)] sm:left-[9px]" />
 

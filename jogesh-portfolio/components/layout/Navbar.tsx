@@ -26,7 +26,7 @@ export function Navbar() {
           scrolled ? "frost-strong shadow-[0_10px_30px_-18px_rgb(30_74_165/0.5)]" : "frost"
         )}
       >
-        <a href="#home" className="flex items-center gap-2 pl-2 font-display text-lg font-semibold text-glacier">
+        <a href="#top" className="flex items-center gap-2 pl-2 font-display text-lg font-semibold text-glacier">
           <Mark className="h-5 w-5 text-azure" />
           {BRAND.wordmark}
         </a>
@@ -47,7 +47,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <a
-            href="#contact"
+            href={`mailto:${PROFILE.email}`}
             className="hidden rounded-full bg-azure px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-[0.97] sm:inline-flex"
           >
             Get in touch

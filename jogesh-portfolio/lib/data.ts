@@ -10,7 +10,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   BarChart3, Database, Workflow, Github, Linkedin, Mail, Phone,
   Terminal, LayoutTemplate, GraduationCap, Award, Snowflake,
-  Building2, ScanSearch, Boxes, Sparkles, TableProperties,
+  Building2, ScanSearch, Boxes, Sparkles,
 } from "lucide-react";
 
 /* --------------------------------- Identity -------------------------------- */
@@ -30,7 +30,7 @@ export const PROFILE = {
   availability: "Open to Data Analyst / Power BI roles",
   email: "jogeshkumar3112@gmail.com",
   phone: "+91 79867 97829",
-  resumeUrl: "", // drop a PDF into public/resume.pdf and set to "/resume.pdf"
+  resumeUrl: "/resume.pdf",
 } as const;
 
 export const SOCIALS: { label: string; href: string; icon: LucideIcon }[] = [
@@ -40,28 +40,10 @@ export const SOCIALS: { label: string; href: string; icon: LucideIcon }[] = [
 ];
 
 export const NAV_LINKS: { id: string; label: string }[] = [
-  { id: "home", label: "Home" },
-  { id: "tools", label: "Tools" },
-  { id: "work", label: "Dashboards" },
   { id: "experience", label: "Experience" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
+  { id: "tools", label: "AI Tools" },
+  { id: "work", label: "Projects" },
 ];
-
-/* ------------------------------ Hero filter bar ---------------------------- */
-// A playful nod to the Glacia booking bar — real facts, framed as "filters".
-export const HERO = {
-  eyebrow: "Data Analyst · Power BI Developer",
-  titleTop: "Where Data",
-  titleBottom: "Meets Decisions",
-  subtitle: "Executive dashboards, automated reporting & Power BI developer tools — crafted for clarity.",
-  filters: [
-    { icon: BarChart3, label: "Speciality", value: "Power BI & DAX" },
-    { icon: Database, label: "Also fluent in", value: "SQL · Snowflake · Fabric" },
-    { icon: Sparkles, label: "Experience", value: "4+ years" },
-  ],
-  cta: { label: "See the work", href: "#tools" },
-} as const;
 
 /* --------------------------------- Metrics --------------------------------- */
 export type Metric = { value: string; label: string };
@@ -152,6 +134,7 @@ export type Work = {
   tags: string[];
   repo: string;
   icon: LucideIcon;
+  images?: string[];
 };
 
 export const WORK: Work[] = [
@@ -162,6 +145,11 @@ export const WORK: Work[] = [
     tags: ["Power BI", "GovTech", "DAX"],
     repo: "https://github.com/jogesh31/Student-Learning-Outcomes-Monitoring-Dashboard",
     icon: BarChart3,
+    images: [
+      "/dashboards/student-outcomes/page-1.png",
+      "/dashboards/student-outcomes/page-2.png",
+      "/dashboards/student-outcomes/page-3.png",
+    ],
   },
   {
     id: "jcbl",
@@ -170,14 +158,11 @@ export const WORK: Work[] = [
     tags: ["Power BI", "Operations"],
     repo: "https://github.com/jogesh31/JCBL-Group---Operational-Dashboard",
     icon: Building2,
-  },
-  {
-    id: "call-center",
-    title: "Call Center Analysis",
-    blurb: "Actionable insights for optimizing call-center operations — volume, resolution and agent performance.",
-    tags: ["Power BI", "Ops analytics"],
-    repo: "https://github.com/jogesh31/Call-Center-Dashboard",
-    icon: BarChart3,
+    images: [
+      "/dashboards/jcbl/overview.jpg",
+      "/dashboards/jcbl/production-summary.jpg",
+      "/dashboards/jcbl/detailed-view.jpg",
+    ],
   },
   {
     id: "workforce",
@@ -186,54 +171,6 @@ export const WORK: Work[] = [
     tags: ["Power BI", "HR analytics"],
     repo: "https://github.com/jogesh31/Workforce-and-Attrition-Analysis",
     icon: Boxes,
-  },
-  {
-    id: "vendor-sales",
-    title: "Vendor Sales Analysis",
-    blurb: "Vendor and sales performance analysis with margin and contribution breakdowns.",
-    tags: ["Power BI", "Sales"],
-    repo: "https://github.com/jogesh31/Vendor-Sales-Analysis",
-    icon: TableProperties,
-  },
-  {
-    id: "mcd",
-    title: "McD Sales Dashboard",
-    blurb: "Sales dashboard over McDonald's data delivering key product and outlet insights.",
-    tags: ["Power BI", "Retail"],
-    repo: "https://github.com/jogesh31/McD-Sales-Dashboard",
-    icon: BarChart3,
-  },
-  {
-    id: "diwali",
-    title: "Diwali Sales Analysis",
-    blurb: "Festival-season sales analysis — data cleaning and visualization to profile the best-converting buyers.",
-    tags: ["Power BI", "Python"],
-    repo: "https://github.com/jogesh31/Diwali-Sales-Analysis",
-    icon: BarChart3,
-  },
-  {
-    id: "vrinda",
-    title: "Vrinda Store Annual Report",
-    blurb: "Annual retail report answering who buys, when and where to focus next year.",
-    tags: ["Excel", "Reporting"],
-    repo: "https://github.com/jogesh31/Vrinda-Store-Analysis",
-    icon: TableProperties,
-  },
-  {
-    id: "imdb",
-    title: "IMDB Movies Analysis",
-    blurb: "Trends in IMDB movie ratings explored with Pandas and Matplotlib.",
-    tags: ["Python", "Pandas"],
-    repo: "https://github.com/jogesh31/IMDB-Movies-Analysis",
-    icon: Sparkles,
-  },
-  {
-    id: "ds-jobs",
-    title: "Data Science Jobs Analysis",
-    blurb: "Market analysis of data-science roles, skills and compensation patterns.",
-    tags: ["Python", "Analysis"],
-    repo: "https://github.com/jogesh31/Data-Science-Jobs-Analysis",
-    icon: ScanSearch,
   },
 ];
 
@@ -356,18 +293,8 @@ export const CREDENTIALS: Credential[] = [
   { id: "quarterly", name: "Quarterly Performer", issuer: "Learnify", note: "Process improvement & strategic insight", icon: Award },
 ];
 
-export const ABOUT = {
-  heading: "From bioinformatics to boardroom dashboards",
-  body: [
-    "I'm a PL-300 certified Data Analyst based in Chandigarh with 4+ years owning BI end to end — from requirements with senior leadership to deployed dashboards and automated reporting.",
-    "My background is in bioinformatics, which taught me to be rigorous with messy, high-volume data. Today I turn 20M+ record datasets into executive dashboards for government and enterprise stakeholders — and when the tooling gets in the way, I build my own, like DAX Slayer and the Dashboard Wireframe Builder.",
-  ],
-} as const;
-
-export const CONTACT = {
-  heading: "Let's build something clear",
-  blurb: "Open to Data Analyst and Power BI Developer roles, and interesting BI-tooling problems. Email or LinkedIn is the fastest way to reach me.",
-} as const;
+export const SUMMARY =
+  "PL-300 certified Data Analyst based in Chandigarh with 4+ years owning BI end to end — from requirements with senior leadership (IAS officers, State Project Directors, CEOs) to deployed dashboards and automated reporting. Background in bioinformatics, which built the discipline to stay rigorous with messy, high-volume data — today that means turning 20M+ record datasets into executive dashboards, and building the developer tools (DAX Slayer, Dashboard Wireframe Builder) that make BI teams faster.";
 
 export const CONTACT_METHODS: { label: string; value: string; href: string; icon: LucideIcon }[] = [
   { label: "Email", value: "jogeshkumar3112@gmail.com", href: "mailto:jogeshkumar3112@gmail.com", icon: Mail },

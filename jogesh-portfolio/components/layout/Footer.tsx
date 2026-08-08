@@ -8,7 +8,7 @@ export function Footer() {
       <div className="frost rounded-3xl px-6 py-8 sm:px-10">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-sm">
-            <a href="#home" className="flex items-center gap-2 font-display text-lg font-semibold text-glacier">
+            <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold text-glacier">
               <Mark className="h-5 w-5 text-azure" /> {BRAND.wordmark}
             </a>
             <p className="mt-3 text-sm leading-relaxed text-ink-muted">

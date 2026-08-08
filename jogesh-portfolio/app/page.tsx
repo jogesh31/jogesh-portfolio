@@ -1,25 +1,23 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/sections/Hero";
-import { Stats } from "@/components/sections/Stats";
+import { Sidebar } from "@/components/sections/Sidebar";
+import { Profile } from "@/components/sections/Profile";
+import { Experience } from "@/components/sections/Experience";
 import { Tools } from "@/components/sections/Tools";
 import { Dashboards } from "@/components/sections/Dashboards";
-import { Experience } from "@/components/sections/Experience";
-import { About } from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative">
-        <Hero />
-        <Stats />
-        <Tools />
-        <Dashboards />
-        <Experience />
-        <About />
-        <Contact />
+      <main id="top" className="relative mx-auto max-w-6xl px-6 pb-16 pt-28 lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8">
+        <Sidebar />
+        <div className="mt-8 grid gap-10 lg:mt-0">
+          <Profile />
+          <Experience />
+          <Tools />
+          <Dashboards />
+        </div>
       </main>
       <Footer />
     </>

@@ -41,17 +41,13 @@ export function Tools() {
   const rest = TOOLS.filter((t) => t.id !== flagship.id);
 
   return (
-    <section id="tools" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
-      <SectionHeading
-        eyebrow="Not just dashboards"
-        title="Developer tools I built"
-        description="When the tooling gets in the way, I build my own. These run on the object model underneath Power BI — real parsers, real safety, zero external calls."
-      />
+    <section id="tools" className="scroll-mt-24">
+      <SectionHeading eyebrow="Not just dashboards" title="AI-Powered Tools" />
 
       {/* Flagship */}
       <Reveal>
         <article
-          className="frost lift mt-12 overflow-hidden rounded-[28px]"
+          className="frost lift mt-8 overflow-hidden rounded-[28px]"
           style={{ borderColor: `rgb(${ACCENT[flagship.accent]} / 0.25)` }}
         >
           <div className="grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.1fr_1fr]">
