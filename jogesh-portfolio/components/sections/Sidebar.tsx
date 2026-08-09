@@ -28,7 +28,7 @@ export function Sidebar() {
               rel="noopener noreferrer"
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-azure px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[0.98]"
             >
-              <Download className="h-4 w-4" /> Résumé
+              <Download className="h-4 w-4" /> Resume
             </a>
           )}
 
