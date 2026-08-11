@@ -22,10 +22,10 @@ const jbmono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${PROFILE.name} — ${PROFILE.roles[0]}`,
+  title: `Portfolio — ${PROFILE.roles[0]}`,
   description: PROFILE.tagline,
   openGraph: {
-    title: `${PROFILE.name} — ${PROFILE.roles[0]}`,
+    title: `Portfolio — ${PROFILE.roles[0]}`,
     description: PROFILE.tagline,
     type: "website",
   },
