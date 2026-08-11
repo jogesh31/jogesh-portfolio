@@ -300,4 +300,4 @@ export const CONTACT_METHODS: { label: string; value: string; href: string; icon
   { label: "GitHub", value: "github.com/jogesh31", href: "https://github.com/jogesh31", icon: Github },
 ];
 
-export const BRAND = { mark: Snowflake, wordmark: "Jogesh", terminalIcon: Terminal };
+export const BRAND = { mark: Snowflake, wordmark: "Portfolio - Data Analyst", terminalIcon: Terminal };
